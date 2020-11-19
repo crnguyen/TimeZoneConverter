@@ -18,6 +18,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 function Time() {
     //react hooks to set state
     const [time, setTime] = useState(0);
+    const [value, setValue] = useState("");
 
     //handle refresh of page
     function refreshPage(){
@@ -36,14 +37,23 @@ function Time() {
         { value: 'UTC-11', label: 'Samoa standard time (UTC-11)' },
         { value: 'UTC+10', label: 'Chamorro Standard Time (UTC+10)' },
     ]
+     
+    //handles selected option for dropdown menu - grabs eventKey from dropdown item
+    //sets the value as state
+    const handleSelect=(e)=>{
+        // console.log(e);
+        setValue(e);
+    }
 
-    //convert the time based on which option is selected
-    // function convertTime(e) {
-    //     // if (e.target.value = options[0].value){
-    //     //     console.log("yes")
-    //     // }
-    //     console.log(e.target.value)
-    // }
+    //check to see if value is being captured 
+    const convertTime=()=>{
+        if (value === "option-0"){
+            console.log("***********")
+        }
+        else{
+            console.log("something else")
+        }
+    }
 
     return(
         <div>
@@ -51,24 +61,26 @@ function Time() {
             <h2>Choose your timezone:</h2>
             <DropdownButton
                 alignRight
-                title="Dropdown right"
+                title={value}
                 id="dropdown-menu-align-right"
+                onSelect={handleSelect}
             >
-              <Dropdown.Item eventKey="option-1">{options[0].label}</Dropdown.Item>
-              <Dropdown.Item eventKey="option-2">{options[1].label}</Dropdown.Item>
-              <Dropdown.Item eventKey="option-3">{options[2].label}</Dropdown.Item>
-              <Dropdown.Item eventKey="option-4">{options[3].label}</Dropdown.Item>
-              <Dropdown.Item eventKey="option-5">{options[4].label}</Dropdown.Item>
-              <Dropdown.Item eventKey="option-6">{options[5].label}</Dropdown.Item>
-              <Dropdown.Item eventKey="option-7">{options[6].label}</Dropdown.Item>
-              <Dropdown.Item eventKey="option-8">{options[7].label}</Dropdown.Item>
-              <Dropdown.Item eventKey="option-9">{options[8].label}</Dropdown.Item>
+              <Dropdown.Item eventKey="option-0">{options[0].label}</Dropdown.Item>
+              <Dropdown.Item eventKey="option-1">{options[1].label}</Dropdown.Item>
+              <Dropdown.Item eventKey="option-2">{options[2].label}</Dropdown.Item>
+              <Dropdown.Item eventKey="option-3">{options[3].label}</Dropdown.Item>
+              <Dropdown.Item eventKey="option-4">{options[4].label}</Dropdown.Item>
+              <Dropdown.Item eventKey="option-5">{options[5].label}</Dropdown.Item>
+              <Dropdown.Item eventKey="option-6">{options[6].label}</Dropdown.Item>
+              <Dropdown.Item eventKey="option-7">{options[7].label}</Dropdown.Item>
+              <Dropdown.Item eventKey="option-8">{options[8].label}</Dropdown.Item>
               <Dropdown.Divider /> 
             </DropdownButton>
            
             <button onClick={()=> setTime(time +1)}>Click me</button>
             <button onClick={refreshPage}>Refresh</button>
-            {/* <button onClick={convertTime}>Refresh</button> */}
+            <button onClick={convertTime}>testing</button>
+            
         </div>
     )
 }
