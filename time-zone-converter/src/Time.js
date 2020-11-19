@@ -47,8 +47,11 @@ function Time() {
 
     //check to see if value is being captured 
     const convertTime=()=>{
-        if (value === "option-0"){
+        if (value === options[0].label){
             console.log("***********")
+        }
+        else if (!value){
+            console.log("nothing was selected")
         }
         else{
             console.log("something else")
@@ -62,18 +65,18 @@ function Time() {
             <DropdownButton
                 alignRight
                 title={value}
-                id="dropdown-menu-align-right"
+                id="dropdown-basic-button"
                 onSelect={handleSelect}
             >
-              <Dropdown.Item eventKey="option-0">{options[0].label}</Dropdown.Item>
-              <Dropdown.Item eventKey="option-1">{options[1].label}</Dropdown.Item>
-              <Dropdown.Item eventKey="option-2">{options[2].label}</Dropdown.Item>
-              <Dropdown.Item eventKey="option-3">{options[3].label}</Dropdown.Item>
-              <Dropdown.Item eventKey="option-4">{options[4].label}</Dropdown.Item>
-              <Dropdown.Item eventKey="option-5">{options[5].label}</Dropdown.Item>
-              <Dropdown.Item eventKey="option-6">{options[6].label}</Dropdown.Item>
-              <Dropdown.Item eventKey="option-7">{options[7].label}</Dropdown.Item>
-              <Dropdown.Item eventKey="option-8">{options[8].label}</Dropdown.Item>
+              <Dropdown.Item eventKey={options[0].label}>{options[0].label}</Dropdown.Item>
+              <Dropdown.Item eventKey={options[1].label}>{options[1].label}</Dropdown.Item>
+              <Dropdown.Item eventKey={options[2].label}>{options[2].label}</Dropdown.Item>
+              <Dropdown.Item eventKey={options[3].label}>{options[3].label}</Dropdown.Item>
+              <Dropdown.Item eventKey={options[4].label}>{options[4].label}</Dropdown.Item>
+              <Dropdown.Item eventKey={options[5].label}>{options[5].label}</Dropdown.Item>
+              <Dropdown.Item eventKey={options[6].label}>{options[6].label}</Dropdown.Item>
+              <Dropdown.Item eventKey={options[7].label}>{options[7].label}</Dropdown.Item>
+              <Dropdown.Item eventKey={options[8].label}>{options[8].label}</Dropdown.Item>
               <Dropdown.Divider /> 
             </DropdownButton>
            
