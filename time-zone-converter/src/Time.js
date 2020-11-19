@@ -18,7 +18,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 function Time() {
     //react hooks to set state
     const [time, setTime] = useState(0);
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState("Select a timezone");
 
     //handle refresh of page
     function refreshPage(){
@@ -48,13 +48,13 @@ function Time() {
     //check to see if value is being captured 
     const convertTime=()=>{
         if (value === options[0].label){
-            console.log("***********")
+            console.log("***********", value)
         }
         else if (!value){
             console.log("nothing was selected")
         }
         else{
-            console.log("something else")
+            console.log("something else:", value)
         }
     }
 
