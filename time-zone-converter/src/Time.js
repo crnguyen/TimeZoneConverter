@@ -83,6 +83,22 @@ function Time() {
             <button onClick={()=> setTime(time +1)}>Click me</button>
             <button onClick={refreshPage}>Refresh</button>
             <button onClick={convertTime}>testing</button>
+
+            <div className="inputSection">
+                <label for="name">Atlantic Standard Time (AST):</label>
+                <input
+                    name="name"
+                    placeholder=""
+                    value={time} //this is a test
+                />
+                
+                <label for="name">Eastern Standard Time (EST):</label>
+                <input
+                    name="name"
+                    placeholder=""
+                    value={time} //this is a test
+                />
+            </div>
             
         </div>
     )
